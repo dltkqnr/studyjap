@@ -14,7 +14,7 @@ import java.util.List;
 @Table(name = "orders")
 @Getter @Setter
 @Entity
-public class Order {
+public class    Order {
 
     @Id @GeneratedValue
     @Column(name = "order_id")
@@ -24,7 +24,7 @@ public class Order {
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "delivery_id")
     private Delivery delivery;
 
